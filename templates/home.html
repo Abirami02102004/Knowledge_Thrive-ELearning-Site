@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Thrive - Learn, Grow, Achieve</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}"> <!-- Link CSS file -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Title Section -->
+    <div class="title-section">
+        <h2>Unlock Your Potential | Learn, Grow, Achieve 👍</h2>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo-section">
+                    <img src="{{ url_for('static', filename='logo2.png') }}" alt="Knowledge Thrive Logo" class="logo">
+                  <a href="#"><h2>Knowledge Thrive</h2></a>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search for courses..." onkeyup="filterCourses()">
+                    <div class="search-icon">🔍</div>
+                    <ul id="search-results" class="hidden">
+                        <li onclick="selectCourse('Web Development')">Web Development</li>
+                        <li onclick="selectCourse('Python Programming')">Python Programming</li>
+                        <li onclick="selectCourse('Data Science')">Data Science</li>
+                        <li onclick="selectCourse('Cyber Security')">Cyber Security</li>
+                        <li onclick="selectCourse('Digital Marketing')">Digital Marketing</li>
+                    </ul>
+                </div>
+                
+                <ul id="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="admin">Admin</a></li>
+
+                </ul>
+                <a href="/index" class="get-started">Get Started</a>
+                <div class="menu" id="menu-toggle">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="content" id="home">
+        <div class="box">
+            <h2>Welcome to Knowledge Thrive</h2>
+            <p>Join thousands of students learning new skills, gaining knowledge, and achieving success. Our courses are designed to help you grow in your career and personal life.</p>
+            <a href="courses.html" class="explore-btn">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="box">
+            <h2>About Us</h2>
+            <p>Knowledge Thrive is an e-learning platform dedicated to providing high-quality courses in various domains such as technology, business, and personal development.</p>
+            <a href="{{ url_for('about') }}" class="explore-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="box">
+            <h2>Our Courses</h2>
+            <p>Discover a variety of courses tailored to help you master new skills. Whether you are a beginner or an expert, we have something for you.</p>
+            <a href="courses.html" class="explore-btn">View Courses</a>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Providing top-quality educational content.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Reach out for more information.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Knowledge Thrive | Empowering Education for Everyone</p>
+    </footer>
+
+    <!-- Link JavaScript File -->
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
+</body>
+</html>

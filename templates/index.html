@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Form</title>
+
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='AVF.avif') }}");
+        }
+    </style>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-box login">
+            <form id="loginForm" autocomplete="off">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <div class="forgot-link">
+                    <a href="{{ url_for('forget') }}">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-box register">
+            <form id="registerForm" autocomplete="off">
+                <h1>Signup</h1>
+                <div class="input-box">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <i class="bx bxs-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class="bx bxs-lock-alt"></i>
+                </div>
+                <button type="submit" class="btn">Signup</button>
+            </form>
+        </div>
+
+        <!-- Toggle Panels -->
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='logo2.png') }}" alt="Knowledge Thrive Logo">
+                </div>
+                <h1>Welcome to Knowledge Thrive!</h1>
+                <p>Unlock the power of learning with Knowledge Thrive 💡</p>
+                <p>Don't have an account?</p>
+                <button class="btn register-btn">Signup</button>
+            </div>
+
+            <div class="toggle-panel toggle-right">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='logo2.png') }}" alt="Knowledge Thrive Logo">
+                </div>
+                <h1>Welcome Back!</h1>
+                <p>Learn, grow, and excel with Knowledge Thrive! 🚀</p>
+                <p>Already have an account?</p>
+                <button class="btn login-btn">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var dashboardUrl = "{{ url_for('student_dashboard') }}";
+    </script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

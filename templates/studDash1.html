@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='studDash.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='studDash.js') }}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='logo2.png') }}" alt="Education Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><i class="fas fa-home"></i> Dashboard</li>
+                <li><i class="fas fa-layer-group"></i> Overview</li>
+                <li><i class="fas fa-book"></i> Courses</li>
+                <li><i class="fas fa-user-graduate"></i> Students</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> Teachers</li>
+                <li><i class="fas fa-edit"></i> Exam</li>
+                <li><i class="fas fa-poll"></i> Result</li>
+                <li><i class="fas fa-video"></i> Videos</li>
+                <li><button class="logout-btn" id="logoutBtn">Logout</button></li> 
+            </ul>
+        </nav>
+    </aside>
+   
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <h2>Dashboard</h2>
+            <div class="dashboard-container">
+                <h1>Welcome, {{ name }}</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-box">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Total Students</h3>
+                <p>1220</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Total Teachers</h3>
+                <p>120</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-book"></i>
+                <h3>Total Courses</h3>
+                <p>15</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-university"></i>
+                <h3>Faculty Rooms</h3>
+                <p>100</p>
+            </div>
+        </section>
+
+        <section class="charts">
+            <div class="chart-container">
+                <h3>Statistics</h3>
+                <canvas id="statsChart"></canvas>
+            </div>
+            <div class="course-activities">
+                <h3>Course Activities</h3>
+                <canvas id="courseChart"></canvas>
+            </div>
+        </section>
+
+        <section class="database">
+            <h3>Database</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Score</th>
+                        <th>Submitted</th>
+                        <th>Grade</th>
+                        <th>Pass/Fail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Glenn Maxwell</td>
+                        <td>80/100</td>
+                        <td>12/10/22 - 10 PM</td>
+                        <td>Excellent</td>
+                        <td class="pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>Cathe Heaven</td>
+                        <td>70/100</td>
+                        <td>12/10/22 - 10 PM</td>
+                        <td>Average</td>
+                        <td class="pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>Yeodar Gil</td>
+                        <td>35/100</td>
+                        <td>12/10/22 - 10 PM</td>
+                        <td>Poor</td>
+                        <td class="fail">Fail</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
